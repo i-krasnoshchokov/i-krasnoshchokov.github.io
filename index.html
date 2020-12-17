@@ -119,7 +119,7 @@
 
 
     var sphere_fig = new THREE.Mesh(
-        new THREE.ParametricGeometry(xyz, 20, 20, false),
+        new THREE.ParametricGeometry(xyz, 120, 120, false),
         new THREE.MeshPhongMaterial( {
             polygonOffset: true,  
             polygonOffsetUnits: 1,
@@ -134,7 +134,7 @@
     arWorldRoot.add(sphere_fig);
 
     onRenderFcts.push(function () {
-        sphere_fig.rotation.x += 0.1
+        sphere_fig.rotation.x += 0.01
     })
 
 
