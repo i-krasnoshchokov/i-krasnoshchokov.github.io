@@ -117,24 +117,23 @@
 			};
 
 
-
-    var sphere_fig = new THREE.Mesh(
-        new THREE.ParametricGeometry(xyz, 20, 20, false),
-	    
-        new THREE.MeshBasicMaterial({ 
+    var material =  new THREE.MeshBasicMaterial({ 
 		color: 0x0000FF,   	     
 	        transparent: true,  	 
 		opacity: 0.75,      		 
 		side: THREE.DoubleSide   
-	}),
+	});	
 
+    var figure = new THREE.Mesh(
+        new THREE.ParametricGeometry(xyz, 20, 20, false),
+	material,
     );
-    sphere_fig.position.y = 0
+    figure.position.y = 0
     arWorldRoot.add(sphere_fig);
 
     onRenderFcts.push(function () {
-        //sphere_fig.rotation.x += 0.08;
-	sphere_fig.rotation.z += 0.08;
+        figure.rotation.x += 0.06;
+	//sphere_fig.rotation.z += 0.08;
     })
 
 
